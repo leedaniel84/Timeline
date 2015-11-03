@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  Timeline
 //
-//  Created by Jay Maloney on 11/3/15.
-//  Copyright © 2015 Apple Inc. All rights reserved.
+//  Created by Daniel Lee on 11/3/15.
+//  Copyright © 2015 Daniel Lee. All rights reserved.
 //
 
 import UIKit
