@@ -1,33 +1,5 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
-    <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
-    </dependencies>
-    <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
-            <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
-            </objects>
-        </scene>
-    </scenes>
-</document>
-||||||| merged common ancestors
-=======
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QvT-Ib-yp0">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="QvT-Ib-yp0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -425,8 +397,101 @@
                     <view key="view" contentMode="scaleToFill" id="RWT-Rs-FON">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="QW5-bI-lWi">
+                                <rect key="frame" x="-4" y="64" width="328" height="455"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TId-bh-yiI">
+                                    <size key="itemSize" width="319" height="202"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="50" height="392"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="imageCell" id="Cjl-Pj-Co2" customClass="ImageCollectionViewCell" customModule="Timeline" customModuleProvider="target">
+                                        <rect key="frame" x="5" y="64" width="319" height="202"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="319" height="202"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p01-2E-NY7">
+                                                    <rect key="frame" x="8" y="8" width="303" height="186"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottomMargin" secondItem="p01-2E-NY7" secondAttribute="bottom" id="3jq-jZ-kPx"/>
+                                            <constraint firstItem="p01-2E-NY7" firstAttribute="leading" secondItem="Cjl-Pj-Co2" secondAttribute="leadingMargin" id="Jsu-MQ-gli"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="p01-2E-NY7" secondAttribute="trailing" id="fAg-yI-imy"/>
+                                            <constraint firstItem="p01-2E-NY7" firstAttribute="top" secondItem="Cjl-Pj-Co2" secondAttribute="topMargin" id="xUB-uo-AEA"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="profileImageView" destination="p01-2E-NY7" id="odX-hG-Xp2"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="profileCollection" id="Mvu-ra-5ne" customClass="ProfileHeaderCollectionReusableView" customModule="Timeline" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="266" width="328" height="392"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ii7-53-Js1">
+                                            <rect key="frame" x="0.0" y="0.0" width="328" height="81"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pt4-RP-yIZ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="328" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oVs-qS-9vH">
+                                                    <rect key="frame" x="0.0" y="21" width="328" height="30"/>
+                                                    <state key="normal" title="Url Button"/>
+                                                    <connections>
+                                                        <action selector="urlButton:" destination="Mvu-ra-5ne" eventType="touchUpInside" id="SJo-j8-oRa"/>
+                                                    </connections>
+                                                </button>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNj-zr-yvy">
+                                                    <rect key="frame" x="0.0" y="51" width="328" height="30"/>
+                                                    <state key="normal" title="Follow Button"/>
+                                                    <connections>
+                                                        <action selector="followActionButtonTapped:" destination="Mvu-ra-5ne" eventType="touchUpInside" id="fe8-Rt-4mC"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ii7-53-Js1" firstAttribute="top" secondItem="Mvu-ra-5ne" secondAttribute="top" id="24O-a7-ggM"/>
+                                        <constraint firstItem="ii7-53-Js1" firstAttribute="leading" secondItem="Mvu-ra-5ne" secondAttribute="leading" id="XaD-Tz-AZZ"/>
+                                        <constraint firstAttribute="bottom" secondItem="ii7-53-Js1" secondAttribute="bottom" id="cRL-Ye-WGr"/>
+                                        <constraint firstAttribute="trailing" secondItem="ii7-53-Js1" secondAttribute="trailing" id="zdG-dW-q7Q"/>
+                                    </constraints>
+                                    <variation key="default">
+                                        <mask key="constraints">
+                                            <exclude reference="cRL-Ye-WGr"/>
+                                        </mask>
+                                    </variation>
+                                    <connections>
+                                        <outlet property="bioLabel" destination="pt4-RP-yIZ" id="aJL-By-g5s"/>
+                                        <outlet property="followButton" destination="DNj-zr-yvy" id="qdn-3d-fv6"/>
+                                        <outlet property="urlButton" destination="oVs-qS-9vH" id="MdY-u3-DuV"/>
+                                    </connections>
+                                </collectionReusableView>
+                                <connections>
+                                    <outlet property="dataSource" destination="4tI-Ah-5nI" id="W2H-t9-qkr"/>
+                                    <outlet property="delegate" destination="4tI-Ah-5nI" id="HGE-pf-dBx"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="QW5-bI-lWi" secondAttribute="trailing" constant="-20" id="G4w-Yl-8X6"/>
+                            <constraint firstItem="QW5-bI-lWi" firstAttribute="leading" secondItem="RWT-Rs-FON" secondAttribute="leadingMargin" constant="-20" id="TJh-Xz-8j4"/>
+                            <constraint firstItem="QW5-bI-lWi" firstAttribute="top" secondItem="qnI-lQ-dEN" secondAttribute="bottom" id="V9E-Dx-Tcu"/>
+                            <constraint firstItem="mUI-L8-wDL" firstAttribute="top" secondItem="QW5-bI-lWi" secondAttribute="bottom" id="yjd-J1-IRc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="htg-x9-U5Q"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -544,4 +609,3 @@
         <segue reference="iyh-b0-oTf"/>
     </inferredMetricsTieBreakers>
 </document>
->>>>>>> 22ab677b1fb321f7b54afb584e034a9d87f145d1

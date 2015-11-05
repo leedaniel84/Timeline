@@ -121,8 +121,21 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue = "toProfileView" {
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "toProfileView" {
+            guard let cell = sender as? UITableViewCell else { return }
+            
+            if let indexPath = tableView.indexPathForCell(cell) {
+                let user = userDataSource[indexPath.row]
+                
+                let destinationViewController = segue.destinationViewController as? ProfileViewController
+                destinationViewController?.user = user
+            } else if let indexPath = (searchController.searchResultsController as? UserSearchResultsTableViewController)?.tableView.indexPathForCell(cell) {
+                let user = (searchController.searchResultsController as! UserSearchResultsTableViewController).usersResultsDataSource[indexPath.row]
+                
+                let destinationViewController = segue.destinationViewController as? ProfileViewController
+                destinationViewController?.user = user
+            }
             
         }
     }

@@ -3,6 +3,7 @@
 //  AppDelegate.swift
 //  Timeline
 //
+<<<<<<< HEAD
 //  Created by Jay Maloney on 11/3/15.
 //  Copyright © 2015 Apple Inc. All rights reserved.
 //
@@ -51,6 +52,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //  AppDelegate.swift
 //  Timeline
 //
+=======
+>>>>>>> 95c5d294c2b2e4661c832e5073bce34ffea948b7
 //  Created by Daniel Lee on 11/3/15.
 //  Copyright © 2015 Daniel Lee. All rights reserved.
 //

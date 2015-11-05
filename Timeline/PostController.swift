@@ -26,7 +26,7 @@ class PostController {
         
     }
     
-    static func postsForuser(username: String, completion: (post: [Post]?) -> Void) {
+    static func postsForuser(user: User, completion: (posts: [Post]?) -> Void) {
         
     }
     

@@ -48,6 +48,12 @@ class UserSearchResultsTableViewController: UITableViewController {
         return cell
     }
     
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        self.presentingViewController?.performSegueWithIdentifier("toProfileView", sender: cell)
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
