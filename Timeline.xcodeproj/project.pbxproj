@@ -27,6 +27,8 @@
 		83D2893B1BE98B4000D58B5C /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2893A1BE98B4000D58B5C /* Comment.swift */; };
 		83D2893D1BE9914D00D58B5C /* Like.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D2893C1BE9914D00D58B5C /* Like.swift */; };
 		83D289411BE992A000D58B5C /* UserController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D289401BE992A000D58B5C /* UserController.swift */; };
+		E681D2861BEC1A3800164ACB /* ProfileHeaderCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E681D2851BEC1A3800164ACB /* ProfileHeaderCollectionReusableView.swift */; };
+		E681D2881BEC1D7100164ACB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E681D2871BEC1D7100164ACB /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		83D2893A1BE98B4000D58B5C /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		83D2893C1BE9914D00D58B5C /* Like.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Like.swift; sourceTree = "<group>"; };
 		83D289401BE992A000D58B5C /* UserController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserController.swift; sourceTree = "<group>"; };
+		E681D2851BEC1A3800164ACB /* ProfileHeaderCollectionReusableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCollectionReusableView.swift; sourceTree = "<group>"; };
+		E681D2871BEC1D7100164ACB /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 				83D289161BE9565E00D58B5C /* AppDelegate.swift */,
 				83D289181BE9565E00D58B5C /* ViewController.swift */,
 				83D2891A1BE9565E00D58B5C /* Main.storyboard */,
+				E681D2871BEC1D7100164ACB /* ImageCollectionViewCell.swift */,
+				E681D2851BEC1A3800164ACB /* ProfileHeaderCollectionReusableView.swift */,
 				837B183E1BEAECD6002ED259 /* UserSearchResultsTableViewController.swift */,
 				83D289361BE9866400D58B5C /* User.swift */,
 				83D289381BE9889E00D58B5C /* Post.swift */,
@@ -194,9 +200,11 @@
 				83D289331BE9779C00D58B5C /* LoginSignupPickerViewController.swift in Sources */,
 				83D2893B1BE98B4000D58B5C /* Comment.swift in Sources */,
 				83D2892B1BE9680000D58B5C /* PostDetailTableViewController.swift in Sources */,
+				E681D2861BEC1A3800164ACB /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				83D289171BE9565E00D58B5C /* AppDelegate.swift in Sources */,
 				83D289371BE9866500D58B5C /* User.swift in Sources */,
 				83D289311BE9760300D58B5C /* AddPhotoTableViewController.swift in Sources */,
+				E681D2881BEC1D7100164ACB /* ImageCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

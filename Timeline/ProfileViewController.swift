@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
     
     var user: User?
+    var userPosts: [Post] = []
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print(user)
 
         // Do any additional setup after loading the view.
     }
@@ -22,6 +25,47 @@ class ProfileViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func updateBasedOnUser() {
+        guard let user = user else { return}
+        title = user.username
+        
+        PostController.postsForuser(user) { (posts) -> Void in
+            if let posts = posts {
+                self.userPosts = posts
+            } else {
+                self.userPosts = []
+            }
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.collectionView.reloadData()
+                
+            })
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return userPosts.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("imageCell", forIndexPath: indexPath) as! ImageCollectionViewCell
+        
+        let post = userPosts[indexPath.item]
+        
+        cell.updateWithImageIdentifier(post.imageEndPoint)
+        
+        return cell
+    }
+    
+    func userTappedURLButton() {
+        if let profileURL = NSURL(string: user!.url!) {
+            
+            let safariViewController = SFSafariViewController(URL: profileURL)
+            
+            presentViewController(safariViewController, animated: true, completion: nil)
+        }
     }
     
 
