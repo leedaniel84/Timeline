@@ -1,16 +1,16 @@
 //
-//  TimelineTableViewController.swift
+//  UserSearchResultsTableViewController.swift
 //  Timeline
 //
-//  Created by Daniel Lee on 11/3/15.
+//  Created by Daniel Lee on 11/4/15.
 //  Copyright © 2015 Daniel Lee. All rights reserved.
 //
 
 import UIKit
 
-class TimelineTableViewController: UITableViewController {
+class UserSearchResultsTableViewController: UITableViewController {
     
-    var posts: [Post] = []
+    var usersResultsDataSource: [User] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,53 +22,32 @@ class TimelineTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
 
-    
-    override func viewDidAppear(animated: Bool) {
-        if let currentUser = UserController.sharedController.currentUser {
-            if posts.count == 0 {
-                loadTimelineForUser(currentUser)
-            }
-        } else {
-            
-            self.tabBarController?.performSegueWithIdentifier("toLoginSignUp", sender: nil)
-            
-        }
-        
-        
-    }
-    
-    func loadTimelineForUser(user: User) {
-        PostController.fetchTimelineForUser(user) { (post) -> Void in
-            
-            if let posts = posts {
-                self.posts = posts
-                self.tableView.reloadData()
-                self.refreshControl?.endRefreshing()
-            }
-        }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
-    }
+   
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return usersResultsDataSource.count
+
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("usernameCell", forIndexPath: indexPath)
 
-        // Configure the cell...
+        let user = usersResultsDataSource[indexPath.row]
+        
+        cell.textLabel?.text = user.username
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

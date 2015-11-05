@@ -14,9 +14,11 @@ class PostController {
     
     static func fetchTimelineForUser(user: User, completion: (post: [Post]?) -> Void) {
         
+        
     }
     
     static func addPost(image: UIImage, caption: String?, completion: (post: Post?) -> Void) {
+        
         
     }
     
@@ -24,7 +26,7 @@ class PostController {
         
     }
     
-    static func postsForuser(user: username, completion: (post: [Post]?) -> Void) {
+    static func postsForuser(username: String, completion: (post: [Post]?) -> Void) {
         
     }
     
@@ -62,9 +64,10 @@ class PostController {
         let comment1 = Comment(username: "ob1kenob", text: "use the force", postIdentifier: "1234")
         let comment2 = Comment(username: "darth", text: "join the dark side", postIdentifier: "4566")
         
-        let post1 = Post(imageEndpoint: sampleImageIdentifier, caption: "Nice shot!", comments: [comment1, comment2], likes: [like1, like2, like3])
-        let post2 = Post(imageEndpoint: sampleImageIdentifier, caption: "Great lookin' kids!")
-        let post3 = Post(imageEndpoint: sampleImageIdentifier, caption: "Love the way she looks when she smiles like that.")
+        let post1 = Post(imageEndPoint: sampleImageIdentifier, caption: "Nice shot!", username: "darth", comments: [comment1, comment2], likes: [like1, like2, like3])
+        let post2 = Post(imageEndPoint: sampleImageIdentifier, caption: "Boom!", username: "R2D2", comments: [comment1, comment2], likes: [like2, like3])
+        let post3 = Post(imageEndPoint: sampleImageIdentifier, caption: "What?!", username: "C3PO")
+        
         
         return [post1, post2, post3]
     }
