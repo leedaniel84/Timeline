@@ -23,6 +23,8 @@ class ProfileHeaderCollectionReusableView: UICollectionReusableView {
     
     @IBAction func followActionButtonTapped(sender: AnyObject) {
         delegate?.userTappedFollowActionButton()
+        
+        
     }
     
     @IBOutlet var bioLabel: UILabel!

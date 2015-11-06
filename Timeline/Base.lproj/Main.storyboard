@@ -428,6 +428,7 @@
                                         </constraints>
                                         <connections>
                                             <outlet property="profileImageView" destination="p01-2E-NY7" id="odX-hG-Xp2"/>
+                                            <segue destination="m4h-q6-6ZM" kind="show" id="wLh-H1-PmJ"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -493,7 +494,13 @@
                             <constraint firstItem="mUI-L8-wDL" firstAttribute="top" secondItem="QW5-bI-lWi" secondAttribute="bottom" id="yjd-J1-IRc"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="htg-x9-U5Q"/>
+                    <navigationItem key="navigationItem" id="htg-x9-U5Q">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="edit" id="1sC-04-bpa">
+                            <connections>
+                                <segue destination="cG2-BJ-8fV" kind="presentation" identifier="toEditProfile" id="hDN-Zg-L7z"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41w-e6-fgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -606,6 +613,7 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="ow3-fb-S1f"/>
-        <segue reference="iyh-b0-oTf"/>
+        <segue reference="hDN-Zg-L7z"/>
+        <segue reference="wLh-H1-PmJ"/>
     </inferredMetricsTieBreakers>
 </document>

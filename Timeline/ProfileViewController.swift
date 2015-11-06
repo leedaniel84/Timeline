@@ -17,7 +17,10 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(user)
+        if user == nil {
+            user = UserController.sharedController.currentUser
+            editButtonItem().enabled = true
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -59,6 +62,14 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         return cell
     }
     
+    func collectionView(collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, atIndexPath indexPath: NSIndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryViewOfKind(UICollectionElementKindSectionHeader, withReuseIdentifier: "headerView", forIndexPath: indexPath) as! ProfileHeaderCollectionReusableView
+        
+        headerView.updateWithUser(user!)
+        headerView.delegate = self
+        return headerView
+    }
+    
     func userTappedURLButton() {
         if let profileURL = NSURL(string: user!.url!) {
             
@@ -68,15 +79,65 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         }
     }
     
+    func userTappedFollowActionButton() {
+        
+        guard let user = user else { return }
+        
+        if user == UserController.sharedController.currentUser {
+            
+            UserController.logOutCurrentUser()
+            tabBarController?.selectedViewController = tabBarController?.viewControllers![0]
+        } else {
+            UserController.userFollowsUser(UserController.sharedController.currentUser, followsUser: user) { (follows) -> Void in
+                
+                if follows {
+                    
+                    UserController.unfollowuser(self.user!, completion: { (success) -> Void in
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.updateBasedOnUser()
+                        })
+                    })
+                } else {
+                    UserController.followUser(self.user!, completion: { (success) -> Void in
+                        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                            self.updateBasedOnUser()
+                        })
+                    })
+                }
+            }
+        }
+    }
 
-    /*
+
+
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "editUser" {
+            let destinationViewController = segue.destinationViewController as? LoginSignupViewController
+            
+            _ = destinationViewController?.view
+            //MARK: where is this damn updateWithUser coming from?
+            
+            destinationViewController?.updateWithUser(user!)
+    
+        } else if segue.identifier == "profileToPostDetail" {
+            if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPathForCell(cell) {
+                
+                let post = userPosts[indexPath.item]
+                
+                let destinationViewController = segue.destinationViewController as? PostDetailTableViewController
+                
+                destinationViewController?.post = post
+                
+            }
+        }
+        }
+        
     }
-    */
+    
 
-}
+

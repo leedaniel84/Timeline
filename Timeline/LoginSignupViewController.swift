@@ -18,6 +18,8 @@ class LoginSignupViewController: UIViewController {
     
     var mode: ViewMode = .Signup
     
+    var user: User?
+    
     var fieldsAreValid: Bool {
         
         switch mode {
@@ -30,6 +32,7 @@ class LoginSignupViewController: UIViewController {
         }
     }
     
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,16 +44,21 @@ class LoginSignupViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     enum ViewMode {
-        
+        case Edit
         case Login
         case Signup
         
     }
+    
+    
+    
     @IBAction func actionButtonTapped(sender: AnyObject) {
         
         if fieldsAreValid {
             switch mode {
+                
             case .Signup:
                 UserController.createUser(emailField.text!, username: usernameField.text!, password: passwordField.text!, profileImage: "none", bio: bioField.text!, url: urlField.text!, completion: { (success, user) -> Void in
                     if success {
@@ -66,6 +74,15 @@ class LoginSignupViewController: UIViewController {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
                         self.presentValidationAlertWithTitle("Unable to Create User", text: "Please check your information and try again.")
+                    }
+                })
+            case .Edit:
+                UserController.updateUser(self.user!, bio: self.bioField, url: self.urlField, completion: { (success, user) -> Void in
+                    
+                    if success {
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    } else {
+                        self.presentValidationAlertWithTitle("Unable to update", text: "Please check your information and try again.")
                     }
                 })
             }
@@ -92,6 +109,20 @@ class LoginSignupViewController: UIViewController {
         case .Signup:
             
             actionButton.setTitle("Signup", forState: .Normal)
+            
+        case .Edit:
+            
+            actionButton.setTitle("Update", forState: .Normal)
+            
+            emailField.hidden = true
+            passwordField.hidden = true
+            
+            if let user = self.user {
+                
+                usernameField.text = user.username
+                bioField.text = user.bio
+                urlField.text = user.url
+            }
             
             
             
