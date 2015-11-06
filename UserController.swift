@@ -51,6 +51,10 @@ class UserController {
         
     }
     
+    static func unfollowuser(user: User, completion: (success: Bool) -> Void ) {
+        
+    }
+    
     static func logOutCurrentUser() -> Void {
         
     }
