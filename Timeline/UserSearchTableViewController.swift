@@ -104,7 +104,7 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
         return userDataSource.count
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("usernameCell", forIndexPath: indexPath)
         
         let user = userDataSource[indexPath.row]
@@ -112,16 +112,14 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
         cell.textLabel?.text = user.username
         
         return cell
-    
-        
-        
- 
+
+    }
 
     
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "toProfileView" {
             guard let cell = sender as? UITableViewCell else { return }
             
@@ -139,7 +137,5 @@ class UserSearchTableViewController: UITableViewController, UISearchResultsUpdat
             
         }
     }
-    
 
-    }
 }

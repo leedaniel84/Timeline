@@ -106,7 +106,6 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
                 }
             }
         }
-    }
 
 
 
@@ -114,7 +113,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
     // MARK: - Navigation
 
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if segue.identifier == "editUser" {
             let destinationViewController = segue.destinationViewController as? LoginSignupViewController
@@ -122,7 +121,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
             _ = destinationViewController?.view
             //MARK: where is this damn updateWithUser coming from?
             
-            destinationViewController?.updateWithUser(user!)
+            destinationViewController?.updateWithUser(user)
     
         } else if segue.identifier == "profileToPostDetail" {
             if let cell = sender as? UICollectionViewCell, let indexPath = collectionView.indexPathForCell(cell) {
