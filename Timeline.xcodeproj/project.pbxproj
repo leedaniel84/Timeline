@@ -11,6 +11,14 @@
 		8331D21F1BE9B988001922CC /* ImageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8331D21E1BE9B988001922CC /* ImageController.swift */; };
 		837B183F1BEAECD6002ED259 /* UserSearchResultsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837B183E1BEAECD6002ED259 /* UserSearchResultsTableViewController.swift */; };
 		837B187F1BED2699002ED259 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837B187E1BED2699002ED259 /* PostTableViewCell.swift */; };
+		837B19C41BF18504002ED259 /* Firebase.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837B19C21BF184E7002ED259 /* Firebase.framework */; };
+		837B19C51BF18504002ED259 /* Firebase.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 837B19C21BF184E7002ED259 /* Firebase.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		837B19C81BF18510002ED259 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837B19C71BF18510002ED259 /* Security.framework */; };
+		837B19CA1BF1851E002ED259 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 837B19C91BF1851E002ED259 /* libc++.tbd */; };
+		837B19CC1BF18526002ED259 /* libicucore.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 837B19CB1BF18526002ED259 /* libicucore.tbd */; };
+		837B19CE1BF18530002ED259 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837B19CD1BF18530002ED259 /* CFNetwork.framework */; };
+		837B19D01BF18538002ED259 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 837B19CF1BF18538002ED259 /* SystemConfiguration.framework */; };
+		837B19D21BF1854D002ED259 /* FirebaseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 837B19D11BF1854D002ED259 /* FirebaseController.swift */; };
 		83D289171BE9565E00D58B5C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D289161BE9565E00D58B5C /* AppDelegate.swift */; };
 		83D289191BE9565E00D58B5C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83D289181BE9565E00D58B5C /* ViewController.swift */; };
 		83D2891C1BE9565E00D58B5C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83D2891A1BE9565E00D58B5C /* Main.storyboard */; };
@@ -32,11 +40,32 @@
 		E681D2881BEC1D7100164ACB /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E681D2871BEC1D7100164ACB /* ImageCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		837B19C61BF18505002ED259 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				837B19C51BF18504002ED259 /* Firebase.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		8331D21C1BE9B3F0001922CC /* PostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PostController.swift; path = Timeline/PostController.swift; sourceTree = "<group>"; };
 		8331D21E1BE9B988001922CC /* ImageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageController.swift; sourceTree = "<group>"; };
 		837B183E1BEAECD6002ED259 /* UserSearchResultsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchResultsTableViewController.swift; sourceTree = "<group>"; };
 		837B187E1BED2699002ED259 /* PostTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
+		837B19C21BF184E7002ED259 /* Firebase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Firebase.framework; sourceTree = "<group>"; };
+		837B19C71BF18510002ED259 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		837B19C91BF1851E002ED259 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		837B19CB1BF18526002ED259 /* libicucore.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libicucore.tbd; path = usr/lib/libicucore.tbd; sourceTree = SDKROOT; };
+		837B19CD1BF18530002ED259 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		837B19CF1BF18538002ED259 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		837B19D11BF1854D002ED259 /* FirebaseController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseController.swift; sourceTree = "<group>"; };
 		83D289131BE9565E00D58B5C /* Timeline.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Timeline.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		83D289161BE9565E00D58B5C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		83D289181BE9565E00D58B5C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,15 +94,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				837B19D01BF18538002ED259 /* SystemConfiguration.framework in Frameworks */,
+				837B19CE1BF18530002ED259 /* CFNetwork.framework in Frameworks */,
+				837B19CC1BF18526002ED259 /* libicucore.tbd in Frameworks */,
+				837B19CA1BF1851E002ED259 /* libc++.tbd in Frameworks */,
+				837B19C81BF18510002ED259 /* Security.framework in Frameworks */,
+				837B19C41BF18504002ED259 /* Firebase.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		837B19C11BF184D8002ED259 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				837B19CF1BF18538002ED259 /* SystemConfiguration.framework */,
+				837B19CD1BF18530002ED259 /* CFNetwork.framework */,
+				837B19CB1BF18526002ED259 /* libicucore.tbd */,
+				837B19C91BF1851E002ED259 /* libc++.tbd */,
+				837B19C71BF18510002ED259 /* Security.framework */,
+				837B19C21BF184E7002ED259 /* Firebase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		83D2890A1BE9565E00D58B5C = {
 			isa = PBXGroup;
 			children = (
+				837B19D11BF1854D002ED259 /* FirebaseController.swift */,
+				837B19C11BF184D8002ED259 /* Frameworks */,
 				83D289401BE992A000D58B5C /* UserController.swift */,
 				8331D21C1BE9B3F0001922CC /* PostController.swift */,
 				8331D21E1BE9B988001922CC /* ImageController.swift */,
@@ -128,6 +178,7 @@
 				83D2890F1BE9565E00D58B5C /* Sources */,
 				83D289101BE9565E00D58B5C /* Frameworks */,
 				83D289111BE9565E00D58B5C /* Resources */,
+				837B19C61BF18505002ED259 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -204,6 +255,7 @@
 				83D289331BE9779C00D58B5C /* LoginSignupPickerViewController.swift in Sources */,
 				83D2893B1BE98B4000D58B5C /* Comment.swift in Sources */,
 				83D2892B1BE9680000D58B5C /* PostDetailTableViewController.swift in Sources */,
+				837B19D21BF1854D002ED259 /* FirebaseController.swift in Sources */,
 				E681D2861BEC1A3800164ACB /* ProfileHeaderCollectionReusableView.swift in Sources */,
 				83D289171BE9565E00D58B5C /* AppDelegate.swift in Sources */,
 				83D289371BE9866500D58B5C /* User.swift in Sources */,
@@ -321,6 +373,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Timeline;
@@ -332,6 +388,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = Timeline/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.Timeline;
