@@ -15,9 +15,7 @@ class PostDetailTableViewController: UITableViewController {
     @IBOutlet weak var headerImageView: UIImageView!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var commentsLabel: UILabel!
-   
-    @IBOutlet weak var usernameTextLabel: UILabel!
-    @IBOutlet weak var commentsTextLabel: UILabel!
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,8 +96,8 @@ class PostDetailTableViewController: UITableViewController {
         let comment = post?.comments[indexPath.row]
         
         if let comment = comment {
-            usernameTextLabel?.text = comment.username
-            commentsTextLabel?.text = comment.text
+            cell.textLabel?.text = comment.username
+            cell.detailTextLabel?.text = comment.text
             
         }
 

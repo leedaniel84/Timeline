@@ -124,7 +124,7 @@ class UserController {
         
     }
     
-    static func createUser(email: String, username: String, password: String, profileImage: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
+    static func createUser(email: String, username: String, password: String, bio: String?, url: String?, completion: (success: Bool, user: User?) -> Void) {
         
         FirebaseController.base.createUser(email, password: password) { (error, response) -> Void in
             if let uid = response["uid"] as? String {

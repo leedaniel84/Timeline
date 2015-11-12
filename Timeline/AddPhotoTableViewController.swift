@@ -63,7 +63,7 @@ class AddPhotoTableViewController: UITableViewController, UINavigationController
         if let image = image {
             
             //Post Image
-            PostController.addPost(image, caption: self.caption, completion: { (post) -> Void in
+            PostController.addPost(image, caption: self.caption, completion: { (success, post) -> Void in
                 if post != nil {
                     self.dismissViewControllerAnimated(true, completion: nil)
                 } else {

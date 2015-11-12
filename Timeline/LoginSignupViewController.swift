@@ -29,6 +29,9 @@ class LoginSignupViewController: UIViewController {
         case .Signup:
             return !(usernameField.text!.isEmpty || emailField.text!.isEmpty || passwordField.text!.isEmpty)
             
+        default:
+            return false
+            
         }
     }
     
@@ -60,7 +63,7 @@ class LoginSignupViewController: UIViewController {
             switch mode {
                 
             case .Signup:
-                UserController.createUser(emailField.text!, username: usernameField.text!, password: passwordField.text!, profileImage: "none", bio: bioField.text!, url: urlField.text!, completion: { (success, user) -> Void in
+                UserController.createUser(emailField.text!, username: usernameField.text!, password: passwordField.text!, bio: bioField.text!, url: urlField.text!, completion: { (success, user) -> Void in
                     if success {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
@@ -69,7 +72,7 @@ class LoginSignupViewController: UIViewController {
                 })
             
             case .Login:
-                UserController.aunthenticateUser(emailField.text!, password: passwordField.text!, completion: { (success, user) -> Void in
+                UserController.authenticateUser(emailField.text!, password: passwordField.text!, completion: { (success, user) -> Void in
                     if success {
                         self.dismissViewControllerAnimated(true, completion: nil)
                     } else {
@@ -77,7 +80,7 @@ class LoginSignupViewController: UIViewController {
                     }
                 })
             case .Edit:
-                UserController.updateUser(self.user!, bio: self.bioField, url: self.urlField, completion: { (success, user) -> Void in
+                UserController.updateUser(self.user!, bio: self.bioField.text, url: self.urlField.text, completion: { (success, user) -> Void in
                     
                     if success {
                         self.dismissViewControllerAnimated(true, completion: nil)
@@ -93,6 +96,7 @@ class LoginSignupViewController: UIViewController {
     
     func presentValidationAlertWithTitle(title: String, text: String) {
         let alert = UIAlertController(title: title, message: text, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
         presentViewController(alert, animated: true, completion: nil)
         
     }
@@ -128,6 +132,11 @@ class LoginSignupViewController: UIViewController {
             
         }
 
+    }
+    
+    func updateWithUser(user: User) {
+        self.user = user
+        mode = .Edit
     }
 }
 

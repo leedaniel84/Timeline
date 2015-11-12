@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import SafariServices
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, ProfileHeaderCollectionReusableViewDelegate {
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    @IBOutlet weak var editBarButtonItem: UIBarButtonItem!
     
     var user: User?
     var userPosts: [Post] = []
@@ -138,5 +142,5 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, Profi
         
     }
     
-
+}
 

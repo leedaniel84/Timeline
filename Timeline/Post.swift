@@ -64,7 +64,7 @@ struct Post: Equatable, FirebaseType {
         }
         
         if let likeDictionaries = json[kLikes] as? [String: AnyObject] {
-            self.comments = likeDictionaries.flatMap({Like(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
+            self.likes = likeDictionaries.flatMap({Like(json: $0.1 as! [String: AnyObject], identifier: $0.0)})
         } else {
             self.likes = []
         }
